@@ -35,7 +35,7 @@ export default function Icon() {
           width: "92%",
           height: "92%",
           borderRadius: "50%",
-          border: "2px solid linear-gradient(90deg, #DAA520, #FFD700, #DAA520)",
+          background: "linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #DAA520 100%)",
           boxShadow: "inset 0 0 20px rgba(218,165,32,0.3), 0 0 20px rgba(218,165,32,0.3)",
         }} />
         <div style={{
