@@ -46,7 +46,7 @@ export default function AccountPage() {
     const [activeTab, setActiveTab] = useState('overview');
 
     return (
-        <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+        <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-center justify-between">

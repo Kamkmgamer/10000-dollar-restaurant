@@ -62,7 +62,7 @@ const stats = [
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+        <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
             {/* Hero */}
             <section className="relative overflow-hidden">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -52,7 +52,7 @@ const spaces = [
 
 export default function PrivateDiningPage() {
     return (
-        <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+        <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
                     <Badge variant="copper" className="gap-1.5"><Sparkles className="h-3 w-3" /> Private Dining</Badge>

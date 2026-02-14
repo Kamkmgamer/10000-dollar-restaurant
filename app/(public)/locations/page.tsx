@@ -94,7 +94,7 @@ const featureIcons: Record<string, React.ElementType> = {
 
 export default function LocationsPage() {
     return (
-        <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+        <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
