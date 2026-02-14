@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { TiltCard } from '@/components/3d/TiltCard';
 import Link from 'next/link';
 
 const categories = [
@@ -138,7 +139,7 @@ export default function MenuPage() {
     };
 
     return (
-        <div className="min-h-screen bg-[var(--obsidian-950)] pt-24">
+        <div className="min-h-screen bg-[var(--obsidian-950)]">
             {/* Hero */}
             <section className="relative pb-16 pt-8">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -227,97 +228,98 @@ export default function MenuPage() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
                                     transition={{ duration: 0.4, delay: index * 0.03 }}
-                                    className="group premium-card overflow-hidden flex flex-col"
                                 >
-                                    {/* Image */}
-                                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[var(--obsidian-800)] to-[var(--obsidian-900)]">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--obsidian-900)]/80 via-transparent to-transparent" />
-                                        {/* Badges */}
-                                        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                                            {item.popular && (
-                                                <Badge variant="copper">
-                                                    <Star className="h-2.5 w-2.5" /> Popular
-                                                </Badge>
-                                            )}
-                                            {item.vegetarian && (
-                                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400">
-                                                    <Leaf className="h-3 w-3" />
-                                                </span>
-                                            )}
-                                            {item.glutenFree && (
-                                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/10 text-amber-400">
-                                                    <Wheat className="h-3 w-3" />
-                                                </span>
-                                            )}
-                                            {item.spicy && (
-                                                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/10 text-red-400">
-                                                    <Flame className="h-3 w-3" />
-                                                </span>
-                                            )}
-                                        </div>
-                                        <div className="absolute top-3 right-3">
-                                            <span className="rounded-full bg-[var(--obsidian-950)]/70 px-2.5 py-1 text-[10px] text-[var(--cream-300)] backdrop-blur-sm">
-                                                <Timer className="mr-0.5 inline h-3 w-3" />
-                                                {item.prepTime}
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className="p-5 flex-1 flex flex-col">
-                                        <div className="flex items-start justify-between gap-3">
-                                            <div className="flex-1">
-                                                <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--copper-500)]">
-                                                    {item.category}
-                                                </span>
-                                                <h3 className="mt-0.5 font-[family-name:var(--font-display)] text-xl font-bold text-[var(--cream-100)]">
-                                                    {item.name}
-                                                </h3>
-                                            </div>
-                                            <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--copper-400)]">
-                                                ${item.price}
-                                            </p>
-                                        </div>
-                                        <p className="mt-2 text-xs leading-relaxed text-[var(--cream-400)]">
-                                            {item.description}
-                                        </p>
-                                        <div className="mt-auto pt-4">
-                                            {cart.find((c) => c.name === item.name) ? (
-                                                <div className="flex items-center gap-3">
-                                                    <button
-                                                        onClick={() => removeFromCart(item.name)}
-                                                        className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--obsidian-600)] text-[var(--cream-400)] transition-colors hover:border-[var(--copper-500)]/30 hover:text-[var(--copper-400)]"
-                                                    >
-                                                        <Minus className="h-3.5 w-3.5" />
-                                                    </button>
-                                                    <span className="w-8 text-center font-medium text-[var(--cream-100)]">
-                                                        {cart.find((c) => c.name === item.name)?.quantity}
+                                    <TiltCard className="group premium-card overflow-hidden flex flex-col h-full">
+                                        {/* Image */}
+                                        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[var(--obsidian-800)] to-[var(--obsidian-900)]">
+                                            <img
+                                                src={item.image}
+                                                alt={item.name}
+                                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--obsidian-900)]/80 via-transparent to-transparent" />
+                                            {/* Badges */}
+                                            <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                                                {item.popular && (
+                                                    <Badge variant="copper">
+                                                        <Star className="h-2.5 w-2.5" /> Popular
+                                                    </Badge>
+                                                )}
+                                                {item.vegetarian && (
+                                                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400">
+                                                        <Leaf className="h-3 w-3" />
                                                     </span>
-                                                    <button
+                                                )}
+                                                {item.glutenFree && (
+                                                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/10 text-amber-400">
+                                                        <Wheat className="h-3 w-3" />
+                                                    </span>
+                                                )}
+                                                {item.spicy && (
+                                                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/10 text-red-400">
+                                                        <Flame className="h-3 w-3" />
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <div className="absolute top-3 right-3">
+                                                <span className="rounded-full bg-[var(--obsidian-950)]/70 px-2.5 py-1 text-[10px] text-[var(--cream-300)] backdrop-blur-sm">
+                                                    <Timer className="mr-0.5 inline h-3 w-3" />
+                                                    {item.prepTime}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="p-5 flex-1 flex flex-col">
+                                            <div className="flex items-start justify-between gap-3">
+                                                <div className="flex-1">
+                                                    <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--copper-500)]">
+                                                        {item.category}
+                                                    </span>
+                                                    <h3 className="mt-0.5 font-[family-name:var(--font-display)] text-xl font-bold text-[var(--cream-100)]">
+                                                        {item.name}
+                                                    </h3>
+                                                </div>
+                                                <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--copper-400)]">
+                                                    ${item.price}
+                                                </p>
+                                            </div>
+                                            <p className="mt-2 text-xs leading-relaxed text-[var(--cream-400)]">
+                                                {item.description}
+                                            </p>
+                                            <div className="mt-auto pt-4">
+                                                {cart.find((c) => c.name === item.name) ? (
+                                                    <div className="flex items-center gap-3">
+                                                        <button
+                                                            onClick={() => removeFromCart(item.name)}
+                                                            className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--obsidian-600)] text-[var(--cream-400)] transition-colors hover:border-[var(--copper-500)]/30 hover:text-[var(--copper-400)]"
+                                                        >
+                                                            <Minus className="h-3.5 w-3.5" />
+                                                        </button>
+                                                        <span className="w-8 text-center font-medium text-[var(--cream-100)]">
+                                                            {cart.find((c) => c.name === item.name)?.quantity}
+                                                        </span>
+                                                        <button
+                                                            onClick={() => addToCart(item)}
+                                                            className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--copper-500)] text-[var(--obsidian-950)] transition-colors hover:bg-[var(--copper-400)]"
+                                                        >
+                                                            <Plus className="h-3.5 w-3.5" />
+                                                        </button>
+                                                    </div>
+                                                ) : (
+                                                    <Button
+                                                        variant="outline"
+                                                        size="sm"
+                                                        className="gap-1.5 w-full"
                                                         onClick={() => addToCart(item)}
-                                                        className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--copper-500)] text-[var(--obsidian-950)] transition-colors hover:bg-[var(--copper-400)]"
                                                     >
                                                         <Plus className="h-3.5 w-3.5" />
-                                                    </button>
-                                                </div>
-                                            ) : (
-                                                <Button
-                                                    variant="outline"
-                                                    size="sm"
-                                                    className="gap-1.5 w-full"
-                                                    onClick={() => addToCart(item)}
-                                                >
-                                                    <Plus className="h-3.5 w-3.5" />
-                                                    Add to Order
-                                                </Button>
-                                            )}
+                                                        Add to Order
+                                                    </Button>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
+                                    </TiltCard>
                                 </motion.div>
                             ))}
                         </AnimatePresence>
