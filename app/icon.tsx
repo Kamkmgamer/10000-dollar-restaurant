@@ -28,7 +28,7 @@ export default function Icon() {
           width: "100%",
           height: "100%",
           borderRadius: "50%",
-          background: "conic-gradient(from 45deg, transparent 0%, rgba(218,165,32,0.08) 10%, transparent 20%, rgba(218,165,32,0.08) 30%, transparent 40%, rgba(218,165,32,0.08) 50%, transparent 60%, rgba(218,165,32,0.08) 70%, transparent 80%, rgba(218,165,32,0.08) 90%, transparent 100%)",
+          background: "radial-gradient(circle at 30% 30%, rgba(218,165,32,0.15) 0%, transparent 50%, rgba(218,165,32,0.08) 80%, transparent 100%)",
         }} />
         <div style={{
           position: "absolute",
