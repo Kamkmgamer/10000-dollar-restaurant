@@ -32,7 +32,7 @@ export default function GiftCardsPage() {
 
     if (sent) {
         return (
-            <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+            <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
                 <div className="mx-auto max-w-lg px-4 text-center">
                     <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="premium-card p-12">
                         <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.3, type: 'spring' }}
@@ -56,7 +56,7 @@ export default function GiftCardsPage() {
     }
 
     return (
-        <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+        <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
                     <Badge variant="copper" className="gap-1.5"><Gift className="h-3 w-3" /> Give the Gift of Flavor</Badge>
@@ -115,8 +115,8 @@ export default function GiftCardsPage() {
                                             key={a}
                                             onClick={() => { setAmount(a); setCustomAmount(''); }}
                                             className={`rounded-lg border py-3 text-center font-medium transition-all ${amount === a && !customAmount
-                                                    ? 'border-[var(--copper-500)]/40 bg-[var(--copper-500)]/10 text-[var(--copper-400)]'
-                                                    : 'border-[var(--obsidian-600)] text-[var(--cream-400)] hover:border-[var(--copper-500)]/20'
+                                                ? 'border-[var(--copper-500)]/40 bg-[var(--copper-500)]/10 text-[var(--copper-400)]'
+                                                : 'border-[var(--obsidian-600)] text-[var(--cream-400)] hover:border-[var(--copper-500)]/20'
                                                 }`}
                                         >
                                             ${a}

@@ -31,7 +31,7 @@ export default function ContactPage() {
 
     if (sent) {
         return (
-            <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+            <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
                 <div className="mx-auto max-w-lg px-4 text-center">
                     <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="premium-card p-12">
                         <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.3, type: 'spring' }}
@@ -55,7 +55,7 @@ export default function ContactPage() {
     }
 
     return (
-        <div className="min-h-screen bg-[var(--obsidian-950)] pt-24 pb-32">
+        <div className="min-h-screen bg-[var(--obsidian-950)] pb-32">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                     <span className="text-xs font-medium uppercase tracking-[0.3em] text-[var(--copper-500)]">Get In Touch</span>
@@ -85,8 +85,8 @@ export default function ContactPage() {
                                             key={type}
                                             onClick={() => setInquiryType(type)}
                                             className={`rounded-full px-4 py-2 text-xs font-medium transition-all ${inquiryType === type
-                                                    ? 'bg-[var(--copper-500)] text-[var(--obsidian-950)]'
-                                                    : 'border border-[var(--obsidian-600)] text-[var(--cream-400)] hover:border-[var(--copper-500)]/20'
+                                                ? 'bg-[var(--copper-500)] text-[var(--obsidian-950)]'
+                                                : 'border border-[var(--obsidian-600)] text-[var(--cream-400)] hover:border-[var(--copper-500)]/20'
                                                 }`}
                                         >
                                             {type}
